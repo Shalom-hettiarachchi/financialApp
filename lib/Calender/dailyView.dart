@@ -7,7 +7,7 @@ class DailyViewPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Group transactions by date
+   
     Map<String, List<Map<String, dynamic>>> groupedTransactions = {};
     for (var transaction in transactions) {
       DateTime date = DateTime.parse(transaction['date']);
@@ -18,6 +18,7 @@ class DailyViewPage extends StatelessWidget {
       groupedTransactions[formattedDate]!.add(transaction);
     }
 
+
     return ListView(
       children: groupedTransactions.keys.map((date) {
         List<Map<String, dynamic>> dateTransactions = groupedTransactions[date]!;
@@ -27,6 +28,7 @@ class DailyViewPage extends StatelessWidget {
         List<String> dateParts = date.split(' ');
         String day = dateParts[0];
         String weekday = dateParts[1];
+
 
         return Card(
           color: const Color(0xFF2A2A2A),
@@ -130,6 +132,7 @@ class DailyViewPage extends StatelessWidget {
       }).toList(),
     );
   }
+
 
   String _getWeekday(int weekday) {
     switch (weekday) {

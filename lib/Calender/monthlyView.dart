@@ -14,6 +14,7 @@ class MonthlyViewPage extends StatelessWidget {
         double totalIncome = monthData['income'];
         double totalExpense = monthData['expense'];
 
+
         return Card(
           color: const Color(0xFF2A2A2A),
           margin: const EdgeInsets.all(10),
@@ -62,6 +63,7 @@ class MonthlyViewPage extends StatelessWidget {
       }).toList(),
     );
   }
+
 
   String _getMonth(int month) {
     switch (month) {
